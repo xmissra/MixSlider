@@ -1,0 +1,31 @@
+{
+  "name": "mixslider",
+  "version": "1.0",
+  "description": "The simplest little slider.",
+  "styles": [
+    "dist/css/mixslider.css",
+    "dist/css/mixslider-dots.css"
+  ],
+  "main": "src/js/mixslider.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xmissra/mixslider.git"
+  },
+  "keywords": [
+    "slider",
+    "jquery",
+    "mixslider",
+    "carousel"
+  ],
+  "author": [
+    "Missra"
+  ],
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/xmissra/mixslider/issues"
+  },
+  "homepage": "https://github.com/xmissra/mixslider#readme",
+  "dependencies": {
+    "jquery": "^1.12.4 || ^2.0.0 || 3.0.0"
+  }
+}

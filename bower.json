@@ -1,0 +1,24 @@
+{
+  "name": "mixslider",
+  "version": "1.0",
+  "homepage": "http://mixslider.missra.com",
+  "authors": [
+    "Missra"
+  ],
+  "description": "The simplest little slider.",
+  "main": "src/js/mixslider.js",
+  "keywords": [
+    "slider",
+    "jquery",
+    "mixslider",
+    "carousel"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
