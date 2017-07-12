@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+				
+		<title>Mixslider 超简单的jQuery响应式滑块</title>
+		<meta name="description" content="Mixslider是一个超简单jQuery响应式滑块 a super-simple slider with swipe, slide, Velocity.js and fade animation support.">
+		
+		<!-- CSS and other pretties -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/site.css">
+		<link rel="stylesheet" href="css/mobile.css" media="(max-width: 640px)">
+		<link rel="stylesheet" href="css/mixslider.css">
+		
+		<!-- Fix viewport -->
+		<meta name="msapplication-window" content="width=device-width;height=device-height">
+		<meta name="viewport" content="width=device-width">
+		
+		<!--[if lt IE 9]>
+			<script src="js/html5.min.js"></script>
+		<![endif]-->
+
+		<script src="js/jquery-2.1.4.js"></script>
+		<script src="js/velocity.min.js"></script>
+		<script src="js/mixslider-min.js"></script>
+	</head>
+	
+	<body>
+		<nav class="sidebar">
+			<a href="#welcome">
+				<img id="logo" src="img/logo.png" width="32" height="24" title="Mixslider" alt="Mixslider logo">
+			</a>
+
+			<div class="cta">
+				<a class="btn download" href="#download">下载</a>
+				<a class="btn github" href="https://github.com/xmissra/mixslider">Github</a>
+				<a class="btn" href="http://www.missra.com">Missra</a>
+			</div>
+		</nav>
+		
+		<main>
+			<ul>
+				<li id="welcome" data-nav="Welcome to Mixslider">
+					<div class="wrap vertical">
+						<h1>Mixslider是一个超简单jQuery响应式滑块。</h1>
+						
+						<div class="actions">
+							<div class="instructions">
+								<pre><span class="ghost">&lt;!-- Mixslider最基本HTML结构 --&gt;</span>
+&lt;div class=&quot;banner&quot;&gt;
+    &lt;ul&gt;
+	    &lt;li&gt;This is my slider.&lt;/li&gt;
+	    &lt;li&gt;Pretty cool, huh?&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+<span class="ghost">&lt;!-- 以及相关的JavaScript --&gt;</span>
+&lt;script src=&quot;//code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/path/mixslider.js&quot;&gt;&lt;/script&gt; <span class="ghost">&lt;!-- path是mixslider.js文件路径! --&gt;</span>
+&lt;script&gt;$(function() { $(&apos;.banner&apos;).mixslider() })&lt;/script&gt;</pre>
+							</div>
+							
+							<div class="download">
+								<p>下载 Mixslider，开始使用</p>
+								
+								<a class="btn" href="#download">下载<span>(version 1.0, 5.6kb)</span>
+								</a>
+								
+								<p>更多的定制或文件化请依照导航查看，这也是Mixslider的演示。</p>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<li id="demos" data-nav="预览 <span class='amp'>&amp;</span> 使用">
+					<div class="spaced">
+						<div class="wrap">
+							<div class="demo">
+								<h2>默认 <small>Default usage</small></h2>
+
+								<div class="default-slider">
+									<ul>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+									</ul>
+								</div>
+
+								<script>$('.default-slider').mixslider();</script>
+							</div>
+
+							<div class="demo">
+								<h2>自动 <small>Automatic slider</small></h2>
+
+								<div class="automatic-slider">
+									<ul>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+									</ul>
+								</div>
+
+								<script>$('.automatic-slider').mixslider({
+									autoplay: true
+								});</script>
+							</div>
+
+							<div class="demo vertical-slider-wrapper">
+								<h2>垂直 <small>Vertical slider</small></h2>
+
+								<div class="vertical-slider">
+									<ul>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+									</ul>
+								</div>
+
+								<script>$('.vertical-slider').mixslider({
+									animation: 'vertical',
+									autoplay: true,
+									infinite: true
+								});</script>
+							</div>
+
+							<div class="demo">
+								<h2>自动淡化 <small>Automatic fade animation</small></h2>
+
+								<div class="fading-slider">
+									<ul>
+										<li><img src="img/cat1.jpg" alt="Cats!"></li>
+										<li><img src="img/cat2.jpg" alt="Cats!"></li>
+										<li><img src="img/cat3.jpg" alt="Cats!"></li>
+										<li><img src="img/cat4.jpg" alt="Cats!"></li>
+										<li><img src="img/cat5.jpg" alt=">:)"></li>
+										<li><img src="img/cat6.jpg" alt="Cats!"></li>
+									</ul>
+								</div>
+
+								<script>$('.fading-slider').mixslider({
+									animation: 'fade',
+									autoplay: true,
+									arrows: true
+								});</script>
+							</div>
+
+							<div class="demo">
+								<h2>手动 <small>Totally manual slider</small></h2>
+
+								<div class="manual-slider">
+									<ul>
+										<li>Slide 0 (first)</li>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+										<li>Slide 5 (last)</li>
+									</ul>
+								</div>
+
+								<input id="manual" placeholder="输入slide数字编号(或者直接输入'first' 'last')">
+
+								<script>$('.manual-slider').mixslider({
+									keys: false,
+									arrows: false,
+									nav: false
+								});
+
+								//  Delay is a custom function
+								$('#manual').on('keyup', function() {
+									$('.manual-slider').mixslider('animate:' + $(this).val());
+								});</script>
+							</div>
+
+							<div class="demo">
+								<h2>无限 <small>Infinite slider</small></h2>
+
+								<div class="infinite-slider">
+									<ul>
+										<li>Slide 0 (first)</li>
+										<li>Slide 1</li>
+										<li>Slide 2</li>
+										<li>Slide 3</li>
+										<li>Slide 4</li>
+										<li>Slide 5 (last)</li>
+									</ul>
+								</div>
+
+								<script>$('.infinite-slider').mixslider({
+									infinite: true
+								});</script>
+							</div>
+						</div>
+					</div>
+				</li>
+				
+				<li id="setup" data-nav="安装 <span class='amp'>&amp;</span> 调试">
+					<div class="spaced">
+						<div class="install-steps">
+							<ul>
+								<li>
+									<div class="wrap vertical">
+										<h2>编写HTML.</h2>
+										<p>Mixslider使用HTML元素来包装所有内容，并将其中的所有幻灯片作为<a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/ul" target="_blank">无序列表</a>。</p>
+										<p>您可以在每个幻灯片中放置任何HTML。 以下是一个例子：</p>
+
+										<pre>&lt;div class=&quot;my-slider&quot;&gt;
+&#x9;&lt;ul&gt;
+&#x9;&#x9;&lt;li&gt;My slide&lt;/li&gt;
+&#x9;&#x9;&lt;li&gt;Another slide&lt;/li&gt;
+&#x9;&#x9;&lt;li&gt;My last slide&lt;/li&gt;
+&#x9;&lt;/ul&gt;
+&lt;/div&gt;</pre>
+									</div>
+								</li>
+
+								<li>
+									<div class="wrap vertical">
+										<h2>引入jQuery和Mixslider.</h2>
+										<p>在标签 <code>&lt;/body&gt;</code> 结束之前添加对jQuery和Mixslider库的引用，如下所示 但是请注意:</p>
+										<ol>
+											<li>确保首先引入jQuery,否则会报错。</li>
+											<li>确保MixsliderMake路径正确，否则无效。</li>
+										</ol>
+
+										<pre><span class="ghost">&lt;!-- 这是其他代码 --&gt;</span>
+	&lt;script src=&quot;//code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;/path/to/mixslider.js&quot;&gt;&lt;/script&gt; <span class="ghost">&lt;!-- 确保路径正确！ --&gt;</span>
+<b class="adjustable">&lt;/body&gt;</b></pre>
+									</div>
+								</li>
+
+								<li>
+									<div class="wrap vertical">
+										<h2>添加Mixslider样式</h2>
+										<p>为了正确显示，Mixslider需要应用一些样式， 您可以通过链接到 <code>dist/css/mixslider.css</code> 文件轻松添加它们，如果你想要样式点，也链接到 <code>dist/css/mixslider-dots.css</code> </p>
+										<p><span class="new">注意</span>默认情况下，样式点的颜色为<code>#fff</code>(白色)。 您可以通过编译LESS文件并更改 <code>variables.less</code> 来更改此值，</p>
+
+										<pre>&lt;link rel="stylesheet" href="<span class="ghost">/path/to/mixslider</span>/dist/css/mixslider.css"&gt;</pre>
+									</div>
+								</li>
+
+								<li>
+									<div class="wrap vertical">
+										<h2>绑定执行元素节点</h2>
+										<p>所有需要做的 - 无论是外部JavaScript文件或是HTML文件都差不多了！最后一步需要告诉Mixslider库要滑动(执行)哪个元素。</p>
+										<p>由于我们为滑块添加了类名为 <code>my-slider</code> 的元素到HTML里面，因此我们可以使用 <code>$('.my-slider')</code> 来定位它。</p>
+
+										<pre><span class="ghost">	&lt;script src=&quot;//code.jquery.com/jquery-2.1.4.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;/path/to/mixslider.js&quot;&gt;&lt;/script&gt;</span>
+	&lt;script&gt;
+		jQuery(document).ready(function($) {
+			<b class="adjustable">$('.my-slider')</b>.mixslider();
+		});
+	&lt;/script&gt;
+<span class="ghost">&lt;/body&gt;</span></pre>
+							
+										<p>您可以添加任意数量的滑块，并使用任<a href="#methods">方法或选项</a>来调整滑块。</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+
+						<script>
+							$('.install-steps').mixslider({
+								animateHeight: true,
+								arrows: true,
+								nav: function(slide, index) {
+									$('<em />').text(index).prependTo(this.find('h2'));
+
+									return index;
+								}
+							});
+						</script>
+					</div>
+				</li>
+				
+				<li id="methods" data-nav="方法 <span class='amp'>&amp;</span> 选项">
+					<div class="spaced">
+						<div class="wrap">
+						<hgroup>
+							<h1>扩展 Mixslider</h1>
+							<p>Mixslider尽管很小，但是非常灵活和可扩展的：您可以改变选项/设置，方法或回调事件等 - 以下是文档说明。</p>
+						</hgroup>
+
+						<h2>自动化支持 <small>Automatic support</small></h2>
+						<p>Mixslider自动化支持几个不同的脚本，前提是在Mixslider之前引用了<code>&lt;script&gt;</code>标签。</p>
+
+						<dl>
+							<dt>Right-to-left (RTL) support</dt>
+							<dd>
+								<p>添加<code>dir="rtl"</code> Mixslider会更改幻灯片方向</p>
+
+								<pre>&lt;div class="my-slider" dir="rtl"&gt;&lt;/div&gt;</pre>
+							</dd>
+
+							<dt>Velocity.js <em><a href="http://velocityjs.org/" target="_blank">访问站点</a></em></dt>
+							<dd>
+								<p>替代jQuery的 <code>.animate()</code>更快的JS库， 如果你发现你的滑块看起来有点迟钝，强烈建议添加Velocity，因为它可以做一个明显的改进。</p>
+
+								<pre>&lt;script src="//cdn.jsdelivr.net/velocity/1.5/velocity.min.js"&gt;&lt;/script&gt;</pre>
+							</dd>
+
+							<dt>jquery.swipe.js <em><a href="//stephband.info/jquery.event.swipe" target="_blank">访问站点</a></em></dt>
+							<dd>
+								<p>为滑块添加移动和桌面滑动支持，请参阅下面的 <code>initSwipe</code> 和 <code>destroySwipe</code>方法，获取有关如何工作的更多信息。</p>
+
+								<pre>&lt;script src="//stephband.info/jquery.event.move/js/jquery.event.move.js"&gt;&lt;/script&gt;
+&lt;script src="//stephband.info/jquery.event.swipe/js/jquery.event.swipe.js"&gt;&lt;/script&gt;</pre>
+							</dd>
+						</dl>
+
+						<h2>方法</h2>
+						<p>Mixslider有两种方法可以控制slider,如下所示</p>
+						<pre><span class="ghost">// 假设我们有这样的变量集…
+var slider = $('.my-demo-slider').mixslider();</span>
+
+<span class="ghost">// 方法 1</span>
+slider.data('mixslider').methodName();
+slider.data('mixslider').methodName('arguments', 'go', 'here');
+
+<span class="ghost">// 方法 2 (速记版本)</span>
+slider.mixslider('methodName');
+slider.mixslider('methodName:arguments,go,here');</pre>
+
+						<dl>
+							<dt>init <em>args: <code>options</code></em></dt>
+							<dd>当您第一次设置<code>.mixslider()</code>时，这将自动调用，但是如果出现布局问题，或者由于某种原因要重新启动滑块，则可以在此处调用它。 <code>options</code>变量是一个对象（见下文）。 <b>您不能使用简写<code>.mixslider('init')</code>方法调用选项</b>。</dd>
+
+							<dt>calculateSlides</dt>
+							<dd>
+								如果幻灯片被添加或删除，您应该称之为否则事情可能会中断。
+
+								<pre>var slider = $('.my-slider').mixslider();
+
+<span class="ghost">// 如果不需要最后一个滑块，可以移除它</span>
+slider.find('li:last').remove();
+
+<span class="ghost">// 重新计算Mixslider，让它知道发生了什么</span>
+slider.mixslider('calculateSlides');
+</pre>
+							</dd>
+
+							<dt>start</dt>
+							<dd>使滑块在幻灯片之间移动，使用options对象来确定幻灯片之间的延迟。</dd>
+
+							<dt>stop</dt>
+							<dd>停止滑块在幻灯片之间移动。 将停止任何自动播放。</dd>
+
+							<dt>destroyKeys</dt>
+							<dd>删除滑块的任何键盘快捷键处理程序。 </dd>
+
+							<dt>initKeys</dt>
+							<dd>手动添加键盘快捷方式支持。 可以在<code>destroyKeys</code>恢复键盘快捷方式支持后使用，或者在options对象中使用<code>{keys：false}</code>，稍后再添加支持。</dd>
+
+							<dt>initSwipe</dt>
+							<dd>手动设置滑动功能（即如果要延迟加载）。 您可以通过在代码中包含<a href="http://stepband.info/jquery.event.swipe/"> jquery.event.move和jquery.event.swipe </a>来自动添加。 如果您需要在页面加载后添加它，可以调用initSwipe，像这样:
+
+								<pre>$('.sliderman').mixslider();
+
+<span class="ghost">// 假设某些原因我们想使用$ .getScript来加载我们的脚本，</span>
+var scripts = [
+	'http://stephband.info/jquery.event.move/js/jquery.event.move.js',
+	'http://stephband.info/jquery.event.swipe/js/jquery.event.swipe.js'
+];
+
+$.getScript(scripts[0]);
+
+<span class="ghost">// 一旦我们的脚本被加载，我们可以通过initSwipe添加刷卡支持</span>
+$.getScript(scripts[1], function() {
+	$('.sliderman').mixslider('initSwipe');
+});
+</pre>
+							</dd>
+
+							<dt>destroySwipe</dt>
+							<dd>移除 swipe 支持</dd>
+
+							<dt>setIndex <em>args: <code>to</code></em></dt>
+							<dd>
+								<p>设置Mixslider的当前索引和导航。 <b>这不会移动滑块！</b>您可以获得一些愚蠢的结果，如果要将滑块移动到特定的幻灯片，我建议您使用<code>animate()</code>。</p>
+								<p>参数<code>to</code>可以是一个整数，其中要设置的幻灯片的索引（请记住：索引从零开始！）或字符串<code>'first'</code>或<code>'last'</code>如果你不知道有多少幻灯片。</p>
+							</dd>
+
+							<dt>animate <em>args: <code>to</code>, <code>dir</code></em></dt>
+							<dd>
+								<p>将滑块移动到特定的幻灯片，更新任何导航并触发<code> mixslider.change </code>事件。 像这样使用：</p>
+
+								<pre><span class="ghost">//  Our trusty slider!</span>
+var slider = $('.slider').mixslider();
+
+<span class="ghost">// 移动第一张幻灯片</span>
+slider.mixslider('animate:first');
+
+<span class="ghost">// 移动第三个滑动e</span>
+<span class="ghost">// 记住，幻灯片是零索引的，所以0是第一张幻灯片，1是第二张等。</span>
+slider.mixslider('animate:2');
+
+<span class="ghost">// 移动到最后一张幻灯片</span>
+slider.mixslider('animate:last');
+
+<span class="ghost">// 移动到最后一张幻灯片并添加方向</span>
+slider.mixslider('animate:last,prev');</pre>
+
+								<p>参数<code>to</code><b>是必需的</b>，可以是一个整数，其中包含要设置的幻灯片的索引（请记住：索引从零开始！）或字符串<code>'first'</code>或<code>'last'</code>如果你不知道有多少幻灯片。</p>
+								<p>参数<code> dir </code> <b>是可选的</b>，可以是字符串<code>'prev'</code>或<code>'next'</code>。</p>
+							</dd>
+
+							<dt>next</dt>
+							<dd>手动移动到下一张幻灯片（或第一张幻灯片，如果您到达最后一张幻灯片）。</dd>
+
+							<dt>prev</dt>
+							<dd>与<code>.mixslider('next')</code>相同，但是在另一个方向。 如果后面没有更多的话，可以手动将滑块向后移动到最后一张幻灯片。</dd>
+						</dl>
+
+						<h2>事件</h2>
+						<p>Mixslider 触发一些可能因为任何原因可以方便的事件监听器，</p>
+
+						<pre><span class="ghost">// 设置我们的滑块以自动移动每秒，以便我们可以看到发生了什么</span>
+var slider = $('.slider').mixslider({ autoplay: true, delay: 1000 });
+
+<span class="ghost">//  滑块设置完毕后，请关闭该事件。</span>
+slider.on('mixslider.ready', function() {
+	alert('Slider is set up!');
+});
+
+<span class="ghost">// 监听slider变化</span>
+slider.on('mixslider.change', function(event, index, slide) {
+	alert('Slide has been changed to ' + index);
+});</pre>
+
+						<h2>选项</h2>
+						<p>Mixslider使用标准的jQuery插件选项对象，如下图所示：</p>
+
+						<pre><span class="ghost">$('.my-demo-slider').mixslider(</span>{
+	settingName: settingValue,
+	anotherSetting: anotherValue
+}<span class="ghost">);</span></pre>
+
+						<p>没有必要设置任何这些选项 - 您可以将这些选项全部留空，并返回到下表突出显示的默认值。</p>
+						
+						<dl>
+							<dt>autoplay <em>default: <code>false</code></em></dt>
+							<dd>滑块自身移动还是手动触发？</dd>
+
+							<dt>speed <em>default: <code>750</code></em></dt>
+							<dd>Mixslider应该在滑块之间滑动的速度（以毫秒为单位）。</dd>
+
+							<dt>delay <em>default: <code>3000</code></em></dt>
+							<dd>如果<code>autoplay</code>设置为true，滑块滑动延迟间隔毫秒数？</dd>
+							
+							<dt>index <em>default: <code>'first'</code></em></dt>
+							<dd>如果设置为“first”或“last”，则会将默认幻灯片设置为该位置，而不是第一张幻灯片。</dd>
+
+							<dt>keys <em>default: <code>true</code></em></dt>
+							<dd>如果想添加Mixslider键盘操作支持，这可以设置为<code>true</code>、<code>false</code>或选项/键码对象，如下所示：
+
+								<pre>keys: {
+	prev: 37,
+	next: 39,
+	stop: 27 <span class="ghost">// 示例：当按下Esc键时暂停</span>
+}</pre>
+								如果要扩展Mixlayider内置的功能，这可能很有用。
+							</dd>
+
+							<dt>nav <em>default: <code>true</code></em></dt>
+							<dd>
+								<p>您要为滑块中的每个幻灯片生成可自动点击的导航吗？</p>
+								<p>您可以通过在每个幻灯片元素中添加<code> data-nav =“nav title”</code>参数来覆盖每个链接中显示的内容（用标题替换“nav title”）。</p>
+								<p>如果要在幻灯片中添加点阵导航，只需将<code> mixslider-dots.css </code>包含到您的CSS文件中即可。</p>
+								<p><span class ="new">New</span>您还可以提供计算幻灯片标签的功能：</p>
+
+								<pre>nav: function(index, label) {
+	<span class="ghost">//  $(this) 当前slide索引</span>
+	<span class="ghost">//  label 当前标签</span>
+	<span class="ghost">//  index slide索引，从0开始</span>
+
+	<span class="ghost">//  在第三张幻灯片上，附加“third slide!”</span>
+	if(index === 2) {
+		return label + ' third slide!';
+	}
+
+	<span class="ghost">//  只显示数字</span>
+	return index + 1;
+}</pre>
+							</dd>
+
+							<dt>arrows <em>default: <code>true</code></em></dt>
+							<dd>
+								<p>您要向您的滑块添加左/右箭头吗？ 您可以通过编写<code>.mixslider-arrow</code>的规则（或者您可以将HTML字符串更改为任何您喜欢的样式），并在其中设置样式，从而在CSS中设计样式。</p>
+								<p>这可以设置为<code>true</code>，<code>false</code>或选项对象。 如果设置了一个选项对象，默认行为将被覆盖。 默认对象如下所示：</p>
+
+								<pre>arrows: {
+	<span class="ghost">//  Mixslider默认行为</span>
+	prev: '&lt;a class="mixslider-arrow prev"&gt;Previous slide&lt;/a&gt;',
+	next: '&lt;a class="mixslider-arrow next"&gt;Next slide&lt;/a&gt;',
+
+	<span class="ghost">//  示例：生成按钮来启动/停止滑块自动播放</span>
+	stop: '&lt;a class="mixslider-pause" /&gt;',
+	start: '&lt;a class="mixslider-play"&gt;Play&lt;/a&gt;'
+}</pre>
+								<p>这个选项有点不正确，因为你可以设置它生成任何东西，而不只是箭头。</p>
+							</dd>
+
+							<dt>animation <em>default: <code>'horizontal'</code></em></dt>
+							<dd>Mixslider应该如何动画化幻灯片？ 现在有三种不同的动画类型：
+								<ol>
+									<li><code>'horizontal'</code>, 它从左到右移动幻灯片</li>
+									<li><code>'vertical'</code>, 它从上到下移动幻灯片</li>
+									<li><code>'fade'</code>, 这些幻灯片交叉淡化</li>
+								</ol>
+							</dd>
+
+							<dt>selectors</dt>
+							<dd>
+								<p>如果您没有使用无序列表来显示您的滑块，则需要添加一个<code>selectors</code>对象，引用Mixslider应该查找哪些元素。 <b>container</b>应该是移动的“传送带”，<b>slides</b>很好 - 幻灯片.</p>
+
+								<pre>selectors: {
+	container: 'ul:first',
+	slides: 'li'
+}</pre>
+								<p><b>注意:</b> 您可能还需要更新/编写自定义CSS才能使Mixslider工作。 检查源代码文件<code>mixslider.less</code>可以更好地了解什么样的样式。</p>
+							</dd>
+
+							<dt>animateHeight <em>default: <code>false</code></em></dt>
+							<dd>Mixlayider是否会将容器的高度设为动画以匹配当前幻灯片的高度？ 如果是，请设置为<code>true</code>。</dd>
+
+							<dt>activeClass <em>default:<br><code>'mixslider-active'</code></em></dt>
+							<dd>Mixslider设置为活动幻灯片和导航项目的课程？ 如果要匹配您的CSS，请使用此选项。</dd>
+						</dl>
+					</div></div>
+				</li>
+				
+				<li id="download" data-nav="下载 <span class='amp'>&amp;</span> 贡献">
+					<div class="wrap vertical">
+						<h1>下载 Mixslider</h1>
+						<p>Mixslider的最新版本是开放源代码，可以通过GitHub获得。</p>
+						<a class="btn big" href="https://github.com/xmissra/mixslider/archive/master.zip">下载 <span>mixslider.min.js, 5.6kb</span></a>
+						<a class="btn big primary" href="https://github.com/xmissra/mixslider">View on Github</a>
+						
+						<h2>问题和贡献</h2>
+						<a class="btn secondary" href="https://github.com/xmissra/mixslider/issues">问题反馈</a>
+						<a class="btn secondary" href="https://www.paypal.me/chzng/20">PayPal</a>
+					</h1>
+				</li>
+			</ul>
+		</main>
+					
+		<!-- WARNING! -->
+		<!-- Please don't copy this! These scripts will only work on this site. -->
+		<script src="js/site.js"></script>
+	</body>
+</html>
