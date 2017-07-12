@@ -1,0 +1,18 @@
+/**
+ *   Here's where everything gets included. You don't need
+ *   to change anything here, and doing so might break
+ *   stuff. Here be dragons and all that.
+ */
+@import 'variables';
+@import 'mixslider/reset';
+
+//  Unfortunately, LESS isn't great at conditionals
+.use-dots() when (@mixslider-dot-navigation = true) { @import 'mixslider/dots'; }
+.use-dots();
+
+//  You can also import dots directly yourself to use
+//  in a more specific selector, like so:
+// #demo {
+// 	.use-dots() when (@mixslider-dot-navigation = true) { @import 'mixslider/dots'; }
+// 	.use-dots();
+// }
