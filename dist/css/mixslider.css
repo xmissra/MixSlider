@@ -1,0 +1,57 @@
+.mixslider {
+	overflow: auto;
+	margin: 0;
+	padding: 0
+}
+
+.mixslider-wrap {
+	position: relative
+}
+
+.mixslider-wrap.mixslider-carousel>li {
+	float: left
+}
+
+.mixslider-vertical>ul {
+	height: 100%
+}
+
+.mixslider-vertical li {
+	float: none;
+	width: 100%
+}
+
+.mixslider-fade {
+	position: relative
+}
+
+.mixslider-fade .mixslider-wrap li {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 8
+}
+
+.mixslider-fade .mixslider-wrap li.mixslider-active {
+	z-index: 10
+}
+
+.mixslider li,.mixslider ol,.mixslider ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none
+}
+
+.mixslider-arrow {
+	position: absolute;
+	left: 20px;
+	z-index: 2;
+	cursor: pointer
+}
+
+.mixslider-arrow.next {
+	left: auto;
+	right: 20px
+}
